@@ -1,14 +1,22 @@
 import inquirer from 'inquirer';
 import fs from "fs/promises"
 
-let {description, installation, usage, licence} = await inquirer
+let {name, description, installation, usage, license} = await inquirer
   .prompt([
+    {
+      type: 'input',
+      name: 'name',
+      message: "Please provide Name of your project",
+      default(){
+          return 'How do you call your project';
+      }
+    },
     {
     type: 'input',
     name: 'description',
     message: "Please provide description of your project",
     default(){
-        return 'Description';
+        return 'Brief description';
     }
   },
   {
@@ -24,15 +32,15 @@ let {description, installation, usage, licence} = await inquirer
     name: 'usage',
     message: "Please provide details about usage of your project",
     default(){
-        return 'Usage description';
+        return 'How to use this project?';
     }
   },
 
   {
     type: 'list',
-    name: 'licence',
-    message: 'Select your licence',
-    choices: ['afl-3.0', 'apache-2.0', 'artistic-2.0', 'bsl-1.0', 'mit'],
+    name: 'license',
+    message: 'Select your license',
+    choices: ['apache-2.0', 'bsl-1.0', 'bsd-3-clause', 'mpl-2.0', 'mit'],
     filter(val) {
       return val.toLowerCase();
     },
@@ -45,19 +53,45 @@ let {description, installation, usage, licence} = await inquirer
 );
 
 let readmeContent = `
-#Project Description
+# ${name}
 ${description}
 
-##Installation
+## Installation
 ${installation}
 
-##Usage
+## Usage
 ${usage}
 
-##
-${licence}
+## License
+${generateLicense(license)}
 
+` //end of writting
 
-
-`
 fs.writeFile("README.md", readmeContent)
+
+
+
+function generateLicense(license) {
+
+  switch (license) {
+    case "apache-2.0": 
+      return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+            
+    case "bsl-1.0":
+      return `[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`
+    
+    case "bsd-3-clause":
+      return `[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`
+    
+    case "mpl-2.0":
+      return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`
+    
+    case "mit":
+      return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+      
+      default:
+      break;
+  }
+  
+}
+
