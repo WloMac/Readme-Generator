@@ -1,7 +1,7 @@
 
 # README.md Generator
 ## Description <a name="description"></a>
-Tool to simplify process of creating README.md file
+Readme.md Generator is a tool which been designed to simplify process of creating README.md file
 
 ## Table of Content
 =========================================================
@@ -14,16 +14,16 @@ Tool to simplify process of creating README.md file
 7. [Questions](#questions)
 
 ## Installation <a name="installation"></a>
-Install node 
+Readme Generator is CLI therefore prior installation of `Node.js` with `inquirer` module is required
 
 ## Usage <a name="usage"></a>
-node index.mjs
+To use application download files to your local file, open console with refering path and type `node index.mjs`. Then provide answer to questions.
 
 ## Contribution <a name="contribution"></a>
-Fork branch
+Contribution is not available at this moment. Please check for further updates.
 
 ## Test <a name="test"></a>
-Yes
+Readme Generator has pass internal tests.
 
 ## License <a name="licence"></a>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
