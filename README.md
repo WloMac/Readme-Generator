@@ -1,23 +1,24 @@
 
-# Readme generator
-This program generates readme files 
-
-Table of contents      
-      *[Readme generator](#Readme generator)
-        *[Description](#description)
+# README.md 
+## Description
+Tool helps to create proffesional readme
 
 ## Installation
-Please open index.mjs by node modules
+node.js
 
 ## Usage
-Program can be use to speed up process of building professional readme
+node.js
 
 ## Contribution
-To contribute fork and push
+Fork branch
 
 ## Test
 Yes
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Questions
+[WloMac](https://github.com/WloMac)
+
 

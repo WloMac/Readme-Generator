@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 import fs from "fs/promises"
 
-let {name, description, installation, usage, license, contributing, test, username} = await inquirer
+let {name, description, installation, usage, license, contributing, test, username, email} = await inquirer
   .prompt([
     {
       type: 'input',
@@ -65,9 +65,17 @@ let {name, description, installation, usage, license, contributing, test, userna
   {
     type: 'input',
     name: 'username',
-    message: "Developer username",
+    message: "Developer GitHub username",
     default(){
-        return 'Has test been provided';
+        return 'Credits';
+    }
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: "Please provide your e-mail address",
+    default(){
+        return 'Your contact email';
     }
   },
 
@@ -77,9 +85,8 @@ let {name, description, installation, usage, license, contributing, test, userna
 
 let readmeContent = `
 # ${name}
+## Description
 ${description}
-
-// ${tableOfContent(table)}
 
 ## Installation
 ${installation}
@@ -95,6 +102,12 @@ ${test}
 
 ## License
 ${generateLicense(license)}
+
+## Questions
+[${username}](https://github.com/${username})
+
+If you have any further questions about this README Generetor do not hesitate to contact using this e-mail address: ${email}
+
 
 ` //end of writting
 
