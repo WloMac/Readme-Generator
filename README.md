@@ -1,13 +1,23 @@
 
-# Project Description
-A1
+# Readme generator
+This program generates readme files 
+
+Table of contents      
+      *[Readme generator](#Readme generator)
+        *[Description](#description)
 
 ## Installation
-B1
+Please open index.mjs by node modules
 
 ## Usage
-C1
+Program can be use to speed up process of building professional readme
+
+## Contribution
+To contribute fork and push
+
+## Test
+Yes
 
 ## License
-[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

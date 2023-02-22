@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 import fs from "fs/promises"
 
-let {name, description, installation, usage, license} = await inquirer
+let {name, description, installation, usage, license, contributing, test, username} = await inquirer
   .prompt([
     {
       type: 'input',
@@ -35,6 +35,22 @@ let {name, description, installation, usage, license} = await inquirer
         return 'How to use this project?';
     }
   },
+  {
+    type: 'input',
+    name: 'contributing',
+    message: "Please provide details how to contribute to your project",
+    default(){
+        return 'How other users can improve your project?';
+    }
+  },
+  {
+    type: 'input',
+    name: 'test',
+    message: "Has test been provided?",
+    default(){
+        return 'Has test been provided';
+    }
+  },
 
   {
     type: 'list',
@@ -46,21 +62,36 @@ let {name, description, installation, usage, license} = await inquirer
     },
   },
 
+  {
+    type: 'input',
+    name: 'username',
+    message: "Developer username",
+    default(){
+        return 'Has test been provided';
+    }
+  },
+
   ]
-//inquirer.prompt(questions).then(answers => {
-//console.log(`Hi ${answers.name}!`);
-//}
+
 );
 
 let readmeContent = `
 # ${name}
 ${description}
 
+// ${tableOfContent(table)}
+
 ## Installation
 ${installation}
 
 ## Usage
 ${usage}
+
+## Contribution
+${contributing}
+
+## Test
+${test}
 
 ## License
 ${generateLicense(license)}
@@ -94,4 +125,5 @@ function generateLicense(license) {
   }
   
 }
+
 
