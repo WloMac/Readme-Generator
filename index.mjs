@@ -85,25 +85,35 @@ let {name, description, installation, usage, license, contributing, test, userna
 
 let readmeContent = `
 # ${name}
-## Description
+## Description <a name="description"></a>
 ${description}
 
-## Installation
+## Table of Content
+
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Contribution](#contribution)
+5. [Test](#test)
+6. [Licence](#licence)
+7. [Questions](#questions)
+
+## Installation <a name="installation"></a>
 ${installation}
 
-## Usage
+## Usage <a name="usage"></a>
 ${usage}
 
-## Contribution
+## Contribution <a name="contribution"></a>
 ${contributing}
 
-## Test
+## Test <a name="test"></a>
 ${test}
 
-## License
+## License <a name="licence"></a>
 ${generateLicense(license)}
 
-## Questions
+## Questions <a name="question"></a>
 [${username}](https://github.com/${username})
 
 If you have any further questions about this README Generetor do not hesitate to contact using this e-mail address: ${email}
