@@ -85,7 +85,7 @@ let {name, description, installation, usage, license, contributing, test, userna
 
 let readmeContent = `
 # ${name}
-## Description <a name="description"></a>
+## Description <a name="#description"></a>
 ${description}
 
 ## Table of Content
@@ -113,7 +113,7 @@ ${test}
 ## License <a name="licence"></a>
 ${generateLicense(license)}
 
-## Questions <a name="question"></a>
+## Questions <a name="questions"></a>
 [${username}](https://github.com/${username})
 
 If you have any further questions about this README Generetor do not hesitate to contact using this e-mail address: ${email}
@@ -121,7 +121,7 @@ If you have any further questions about this README Generetor do not hesitate to
 
 ` //end of writting
 
-fs.writeFile("README.md", readmeContent)
+fs.writeFile("GeneratedREADME.md", readmeContent)
 
 
 
